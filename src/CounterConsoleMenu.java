@@ -60,6 +60,10 @@ public class CounterConsoleMenu {
                     decrement();
                 case 1:
                     increment();
+                case 2:
+                    reset();
+                case 3:
+                    quit();
 
             }
 
