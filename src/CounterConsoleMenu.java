@@ -53,19 +53,28 @@ public class CounterConsoleMenu {
 
         while(running == true){
 
+            System.out.println("0 - decrement, 1 - increment, 2 - reset, 3 - quit");
+
             int addOrSub = input.nextInt();
 
             switch(addOrSub) {
 
                 case 0:
                     decrement();
+                    break;
                 case 1:
                     increment();
+                    break;
                 case 2:
                     reset();
+                    break;
                 case 3:
                     quit();
 
+            }
+
+            if(running == true) {
+                displayCounter();
             }
 
         }
