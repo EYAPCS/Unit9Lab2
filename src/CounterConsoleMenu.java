@@ -18,6 +18,7 @@ public class CounterConsoleMenu {
 
     public CounterConsoleMenu() {
         setCount(0);
+        running = true;
     }
 
     public int getCount() {
