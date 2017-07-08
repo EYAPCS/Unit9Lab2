@@ -12,68 +12,49 @@ import java.util.Scanner;
 
 public class CounterConsoleMenu {
 
-    private Scanner input = new Scanner(System.in);
-    private int counter;
+    private Scanner input;
+    private Counter counter;
     private boolean running;
 
     public CounterConsoleMenu() {
-        setCount(0);
+        counter = new Counter();
+        input = new Scanner(System.in);
         running = true;
     }
 
-    public int getCount() {
-        return counter;
-    }
-
-    public void setCount(int newCount) {
-        counter = newCount;
-    }
-
-    public void increment() {
-        counter++;
-    }
-
-    public void decrement() {
-        counter--;
-    }
-
-    public void reset() {
-        counter = 0;
-    }
-
     public void displayCounter() {
-        System.out.println(counter);
+        System.out.println(counter.getCount());
     }
 
     public void quit() {
         running = false;
     }
 
-    public void getInput() {
+    public void start() {
 
-        while(running == true){
+        while(running){
 
             System.out.println("0 - decrement, 1 - increment, 2 - reset, 3 - quit");
 
-            int addOrSub = input.nextInt();
+            int decision = input.nextInt();
 
-            switch(addOrSub) {
+            switch(decision) {
 
                 case 0:
-                    decrement();
+                    counter.decrement();
                     break;
                 case 1:
-                    increment();
+                    counter.increment();
                     break;
                 case 2:
-                    reset();
+                    counter.reset();
                     break;
                 case 3:
                     quit();
 
             }
 
-            if(running == true) {
+            if(running) {
                 displayCounter();
             }
 

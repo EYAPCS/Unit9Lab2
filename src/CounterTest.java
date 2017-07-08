@@ -7,7 +7,7 @@ public class CounterTest {
 
         CounterConsoleMenu menu = new CounterConsoleMenu();
 
-        menu.getInput();
+        menu.start();
 
     }
 
